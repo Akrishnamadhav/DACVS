@@ -1,1 +1,12 @@
-"tensorflow\ntransformers\nscikit-learn" 
+Flask==3.0.3
+Flask-Cors==4.0.0
+Pillow==10.3.0
+numpy==1.26.4
+
+# OCR stack (CPU-only, Windows Py3.10 compatible)
+torch==2.2.2
+torchvision==0.17.2
+torchaudio==2.2.2
+easyocr==1.7.1
+opencv-python-headless==4.10.0.84
+PyMuPDF==1.24.9
