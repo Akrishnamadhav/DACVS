@@ -1,9 +1,11 @@
 Flask==3.0.3
 Flask-Cors==4.0.0
-Pillow==10.3.0
+# Pillow 10.4.0 fixes KeyError: '__version__' build failure on Render (Python 3.11)
+Pillow==10.4.0
 numpy==1.26.4
 
-# OCR stack (CPU-only, Windows Py3.10 compatible)
+# OCR stack — CPU-only. Python version is pinned to 3.11 via runtime.txt
+# torch 2.2.2 only supports Python 3.8–3.11
 torch==2.2.2
 torchvision==0.17.2
 torchaudio==2.2.2
