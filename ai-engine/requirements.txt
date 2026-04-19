@@ -1,17 +1,20 @@
 Flask==3.0.3
 Flask-Cors==4.0.0
-# Pillow 10.4.0 fixes KeyError: '__version__' build failure on Render (Python 3.11)
+# Pillow 10.4.0 fixes KeyError: '__version__' build failure
 Pillow==10.4.0
-numpy==1.26.4
+# numpy unpinned — lets pip resolve the right version for whatever Python Render uses
+numpy
 
-# OCR stack — CPU-only. Python version is pinned to 3.11 via runtime.txt
-# torch 2.2.2 only supports Python 3.8–3.11
-torch==2.2.2
-torchvision==0.17.2
-torchaudio==2.2.2
+# CPU-only PyTorch (no GPU on Render free tier, much smaller wheels ~200MB vs ~800MB)
+# Using PyTorch's own wheel index so pip always finds a matching CPU build
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
+torchaudio
+
 easyocr==1.7.1
 opencv-python-headless==4.10.0.84
 PyMuPDF==1.24.9
 
-# Production WSGI server (required for Render deployment)
+# Production WSGI server (required for Render)
 gunicorn==21.2.0
