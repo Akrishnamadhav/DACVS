@@ -13,7 +13,7 @@ import { useAcademicVerification } from '../hooks/useAcademicVerification';
 import { useCertificateNFT } from '../hooks/useCertificateNFT';
 
 export default function DashboardInstitution() {
-  const { register, handleSubmit, reset, setValue, getValues } = useForm();
+  const { register, reset, setValue, getValues } = useForm();
   const [file, setFile] = useState<File | null>(null);
   const [analysis, setAnalysis] = useState<any>(null);
   const [loading, setLoading] = useState(false);
